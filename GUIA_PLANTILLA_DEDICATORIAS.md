@@ -1,12 +1,12 @@
 # 💎 Guía de Plantilla y Flujo Operativo: RyM Dedicatorias
 
-Este documento sirve como **contexto técnico, plantilla y procedimiento operativo estandarizado (SOP)** para la creación de futuras dedicatorias web asociadas a pedidos de **Joyería RyM** (`D-002`, `D-003`, etc.).
+Este documento sirve como **contexto técnico, plantilla y procedimiento operativo estandarizado (SOP)** para la creación de futuras dedicatorias web asociadas a pedidos de **RyM** (`D-002`, `D-003`, etc.).
 
 ---
 
 ## 📌 1. Modelo de Negocio y Flujo de Experiencia
 
-1. **Venta en Joyería:** El cliente adquiere una joya en [joyeria.rymgroup.org](https://joyeria.rymgroup.org/) y añade el servicio de **Dedicatoria Web Personalizada**.
+1. **Venta en RyM:** El cliente adquiere un producto o detalle en [rymgroup.org](https://rymgroup.org/) y añade el servicio de **Dedicatoria Web Personalizada**.
 2. **QR en el Estuche:** Dentro del estuche o en una tarjeta de lujo se imprime el **Código QR** oficial con el SKU correspondiente (`https://d-XXX.rymgroup.org/`).
 3. **Experiencia de Unboxing Digital:**
    * La persona agasajada escanea el QR con su smartphone.
@@ -107,7 +107,7 @@ git push -u origin main
 
 ---
 
-## 🎨 4. Paleta de Colores de Joyería RyM
+## 🎨 4. Paleta de Colores de RyM
 
 | Variable | Hexadecimal | Uso sugerido |
 | :--- | :--- | :--- |

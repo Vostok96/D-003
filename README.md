@@ -1,6 +1,6 @@
 # RyM Dedicatorias | SKU: D-003
 
-Dedicatoria web interactiva personalizada y conmemorativa para clientes de **RyM Joyería**.
+Dedicatoria web interactiva personalizada y conmemorativa para clientes de **RyM**.
 Diseñada para ser escaneada mediante código QR en el estuche o tarjeta del obsequio.
 
 ---
@@ -25,7 +25,7 @@ Diseñada para ser escaneada mediante código QR en el estuche o tarjeta del obs
 3. **Tarjeta de Invitación Oficial:** Destacada con el diseño de la sirenita bebé, conchas, caballito de mar, cangrejito y banco de peces.
 4. **Carta de Dedicatoria de Lujo:** Tipografías editoriales (*Cormorant Garamond* y *Montserrat*) enmarcada con detalles dorados y salvia.
 5. **Galería Completa de 21 Recuerdos:**
-   * **10 Polaroids de Alta Joyería:** Destacando los momentos más emotivos de la espera con leyendas poéticas.
+   * **10 Polaroids de Lujo:** Destacando los momentos más emotivos de la espera con leyendas poéticas.
    * **11 Fotografías Complementarias en Cuadrícula Marina:** Con Lightbox cinematográfico que soporta gestos táctiles *Swipe* en móviles y flechas en PC.
 6. **Lienzo de Partículas Acuáticas:** Burbujitas marinas iridiscentes, destellos de luz solar y perlitas que flotan suavemente.
 7. **Detalle Interactivo de Bendiciones:** Botón para enviar una ola de bendiciones con burbujas y corazoncitos hacia arriba y contador persistente en `localStorage`.
@@ -36,4 +36,4 @@ Diseñada para ser escaneada mediante código QR en el estuche o tarjeta del obs
 ## 🚀 Despliegue en Netlify
 * **Repositorio GitHub:** `https://github.com/Vostok96/D-003.git`
 * **Subdominio de producción:** `https://d-003.rymgroup.org/`
-* **Tienda Principal:** `https://joyeria.rymgroup.org/`
+* **Sitio Oficial:** `https://rymgroup.org/`
