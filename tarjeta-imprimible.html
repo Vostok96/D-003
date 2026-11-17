@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta Imprimible para Estuche | Nuestra Princesa Isabela • RyM Joyería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #c5a059;
+      --gold-light: #fae69e;
+      --sea-mint: #769f8c;
+      --sea-dark: #4f7868;
+      --ocean-navy: #213242;
+      --paper: #fbf8f3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #eef2ef;
+      color: var(--ocean-navy);
+      min-height: 100vh;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .toolbar {
+      background: #ffffff;
+      border: 1px solid #d4e2db;
+      border-radius: 50px;
+      padding: 10px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(79, 120, 104, 0.12);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #4f7868 0%, #769f8c 100%);
+      color: #ffffff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 25px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(79, 120, 104, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(79, 120, 104, 0.35);
+    }
+
+    /* Contenedor de la tarjeta para estuche (10cm x 15cm o proporcional) */
+    .card-print {
+      width: 420px;
+      min-height: 600px;
+      background: var(--paper);
+      border-radius: 16px;
+      border: 1.5px solid rgba(197, 160, 89, 0.4);
+      padding: 36px 30px;
+      box-shadow: 0 20px 50px rgba(79, 120, 104, 0.15);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Marco interior ornamental */
+    .card-border-inner {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .brand-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--ocean-navy);
+      margin-bottom: 2px;
+    }
+
+    .brand-sub {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sea-dark);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .main-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--ocean-navy);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .sub-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--sea-dark);
+      margin-bottom: 22px;
+    }
+
+    .qr-frame {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      margin-bottom: 18px;
+    }
+
+    .qr-frame img {
+      width: 170px;
+      height: 170px;
+      display: block;
+    }
+
+    .qr-instruction {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ocean-navy);
+      margin-bottom: 4px;
+    }
+
+    .qr-url {
+      font-size: 11px;
+      color: var(--sea-dark);
+      font-family: monospace;
+      margin-bottom: 20px;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      color: #4a5c68;
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    .sku-badge {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: #8b9ea8;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .toolbar {
+        display: none;
+      }
+      .card-print {
+        box-shadow: none;
+        border: 1px solid rgba(197, 160, 89, 0.6);
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Tarjeta de Estuche</button>
+    <span style="font-size: 12px; color: #536b78;">Tamaño ideal para tarjeta dentro del estuche de Joyería RyM</span>
+  </div>
+
+  <div class="card-print">
+    <div class="card-border-inner"></div>
+
+    <div class="brand-title">RyM</div>
+    <div class="brand-sub">Joyería • Baby Shower Especial</div>
+
+    <div class="main-heading">Nuestra Princesa Isabela</div>
+    <div class="sub-heading">Está en camino • 28 de Noviembre</div>
+
+    <div class="qr-frame">
+      <img src="assets/qr-d003-isabela.png" alt="Código QR Isabela D-003" />
+    </div>
+
+    <div class="qr-instruction">Escanea con tu celular</div>
+    <div class="qr-url">d-003.rymgroup.org</div>
+
+    <div class="quote-text">
+      “Tan infinito y profundo como el mar es nuestro amor por ti. ¡Bienvenida a nuestras vidas, Isabela!”
+    </div>
+
+    <div class="sku-badge">
+      Calidad en cada detalle • SKU: D-003
+    </div>
+  </div>
+
+</body>
+</html>

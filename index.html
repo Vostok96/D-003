@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Nuestra Princesa Isabela está en camino | Baby Shower • Joyería RyM</title>
+
+  <!-- Supresión inmediata de la insignia inyectada de Netlify -->
+  <style>
+    #nl-badge-frame, #nl-hud-frame, iframe[id^="nl-"], iframe[title*="Netlify" i] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      top: -99999px !important;
+      left: -99999px !important;
+    }
+  </style>
+  <script>
+    (function() {
+      const origCreate = document.createElement;
+      document.createElement = function(tag, opt) {
+        const el = origCreate.call(document, tag, opt);
+        if (tag && typeof tag === 'string' && tag.toLowerCase() === 'iframe') {
+          const origSet = el.setAttribute;
+          el.setAttribute = function(name, val) {
+            if (name === 'id' && (val === 'nl-badge-frame' || val === 'nl-hud-frame')) {
+              el.style.display = 'none';
+              setTimeout(function() { el.remove(); }, 0);
+            }
+            return origSet.call(document, name, val);
+          };
+        }
+        return el;
+      };
+
+      const obs = new MutationObserver(function(mutations) {
+        for (let i = 0; i < mutations.length; i++) {
+          const nodes = mutations[i].addedNodes;
+          for (let j = 0; j < nodes.length; j++) {
+            const n = nodes[j];
+            if (n.nodeType === 1) {
+              if (n.id === 'nl-badge-frame' || n.id === 'nl-hud-frame' || (n.tagName === 'IFRAME' && n.title && n.title.indexOf('Netlify') !== -1)) {
+                n.remove();
+              }
+              if (n.tagName === 'SCRIPT' && n.src && n.src.indexOf('/hud') !== -1) {
+                n.remove();
+              }
+            }
+          }
+        }
+      });
+      obs.observe(document.documentElement, { childList: true, subtree: true });
+    })();
+  </script>
+
+  <meta name="description" content="Nuestra princesa Isabela está en camino. Una bendición y dedicatoria especial de Baby Shower para celebrar la llegada más hermosa." />
+  <meta name="theme-color" content="#f6f3ed" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Metadatos OpenGraph para previsualizaciones elegantes en WhatsApp y redes -->
+  <meta property="og:title" content="Nuestra Princesa Isabela está en camino | Baby Shower" />
+  <meta property="og:description" content="Antes de que nacieras ya te soñábamos; antes de conocer tus ojos ya te amábamos con todo el corazón. ¡Bienvenida, Isabela!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/invitacion-isabela.jpg" />
+
+  <!-- Tipografías de Alta Joyería y Editorial RyM -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: {
+              linen: '#f6f3ed',
+              warm: '#eee8de',
+            },
+            sea: {
+              mint: '#769f8c',
+              light: '#dceae3',
+              dark: '#4f7868',
+            },
+            lilac: {
+              soft: '#baa0d0',
+              deep: '#8a64a3',
+            },
+            coral: {
+              soft: '#eb7b77',
+              deep: '#d95853',
+            },
+            ocean: {
+              navy: '#213242',
+              muted: '#536b78',
+            },
+            gold: {
+              light: '#fae69e',
+              DEFAULT: '#c5a059',
+              dark: '#967433',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-sand-linen text-ocean-navy antialiased selection:bg-sea-light selection:text-sea-dark">
+
+  <!-- Lienzo interactivo de burbujas marinas y destellos dorados -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- PANTALLA DE APERTURA: SOBRE DE LUJO CON LACRE DE CONCHA MARINA RYM -->
+  <div id="envelope-screen">
+    <div class="text-center mb-8 px-4 max-w-md animate-fade-in">
+      <span class="inline-flex items-center gap-1.5 px-4 py-1 text-xs tracking-[0.25em] font-sans font-medium text-sea-dark uppercase bg-white/80 backdrop-blur-sm rounded-full border border-gold/40 shadow-sm mb-3">
+        <span>Joyería RyM</span>
+        <span class="text-gold">•</span>
+        <span>Baby Shower Especial</span>
+      </span>
+      <h1 class="font-serif text-3xl sm:text-4xl text-ocean-navy font-semibold tracking-wide">
+        Bienvenida, Princesa Isabela
+      </h1>
+      <p class="font-sans text-xs sm:text-sm text-ocean-muted mt-2 font-light">
+        Un detalle inolvidable preparado con todo el amor de la familia para celebrar tu dulce llegada.
+      </p>
+    </div>
+
+    <!-- Sobre Interactivo 3D -->
+    <div class="envelope-wrapper" id="envelope-trigger" role="button" aria-label="Abrir sobre de bienvenida" tabindex="0">
+      <div class="envelope-back"></div>
+      <div class="envelope-flap-left"></div>
+      <div class="envelope-flap-right"></div>
+      <div class="envelope-flap-bottom"></div>
+      <div class="envelope-flap-top"></div>
+
+      <!-- Sello de Lacre de Oro con Concha Marina RyM -->
+      <div class="wax-seal" id="wax-seal-btn">
+        <!-- SVG Concha Marina de Joyería -->
+        <svg class="w-6 h-6 text-amber-100 drop-shadow" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 3.2 1.5 6.05 3.84 7.89.47.37 1.15.22 1.45-.31L9 16.5c.34-.6 1.05-.9 1.71-.72L12 16.14l1.29-.36c.66-.18 1.37.12 1.71.72l1.71 3.08c.3.53.98.68 1.45.31C20.5 18.05 22 15.2 22 12c0-5.52-4.48-10-10-10zm-3 7c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
+        </svg>
+        <span class="text-[9px] font-serif font-bold text-amber-100 tracking-widest mt-0.5">RyM</span>
+      </div>
+    </div>
+
+    <!-- Indicador de acción animado -->
+    <div class="mt-8 text-center animate-bounce">
+      <span class="inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-sea-dark bg-white/90 backdrop-blur px-5 py-2.5 rounded-full border border-sea-mint/40 shadow-md">
+        <span>Toca el sello para abrir</span>
+        <svg class="w-4 h-4 text-sea-mint" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd" />
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- AUDIO OFICIAL: AZUL (COVER) -->
+  <audio id="romantic-audio" preload="auto" loop>
+    <source src="assets/audio/azul.mp3" type="audio/mpeg" />
+    <source src="assets/audio/azul.webm" type="audio/webm" />
+  </audio>
+
+  <!-- REPRODUCTOR FLOTANTE DE MÚSICA -->
+  <aside class="music-player-pill" id="music-pill">
+    <div class="vinyl-disc" id="vinyl-disc">
+      <div class="vinyl-center"></div>
+    </div>
+    <div class="flex flex-col text-left pr-1">
+      <span class="text-[11px] font-serif font-semibold text-ocean-navy leading-tight truncate max-w-[140px] sm:max-w-[180px]">
+        Azul
+      </span>
+      <span class="text-[9px] font-sans text-ocean-muted uppercase tracking-wider">
+        Cover • Para Isabela
+      </span>
+    </div>
+    <button id="toggle-audio-btn" class="p-2 text-sea-dark hover:text-coral-deep transition-colors focus:outline-none" aria-label="Pausar o reproducir música">
+      <svg id="play-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      <svg id="pause-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+      </svg>
+    </button>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL DE LA DEDICATORIA -->
+  <main class="relative z-10 w-full overflow-hidden">
+
+    <!-- HERO: PRESENTACIÓN DE BIENVENIDA A ISABELA -->
+    <header class="pt-16 pb-10 sm:pt-24 sm:pb-14 px-4 text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-gold/40 shadow-sm mb-6 backdrop-blur">
+        <svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        <span class="text-xs font-sans tracking-[0.2em] uppercase font-medium text-sea-dark">
+          Baby Shower Especial • 28 de Noviembre
+        </span>
+        <svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl text-ocean-navy font-bold tracking-tight mb-3 leading-tight">
+        Nuestra Princesa <span class="gold-shimmer italic font-normal">Isabela</span>
+      </h1>
+      <p class="font-serif text-xl sm:text-2xl text-sea-dark italic">
+        Está en camino • El milagro más dulce que llegó a iluminar nuestras vidas
+      </p>
+
+      <div class="flex items-center justify-center gap-3 my-6">
+        <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold"></div>
+        <svg class="w-5 h-5 text-sea-mint wave-float" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" />
+        </svg>
+        <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold"></div>
+      </div>
+    </header>
+
+    <!-- TARJETA DESTACADA DE LA INVITACIÓN TEMÁTICA -->
+    <section class="max-w-md mx-auto px-4 mb-16">
+      <div class="relative bg-white/95 rounded-2xl p-4 sm:p-5 shadow-2xl border border-sea-light backdrop-blur-md transition-transform duration-300 hover:scale-[1.01]">
+        <div class="overflow-hidden rounded-xl border border-gold/30 shadow-inner">
+          <img src="assets/images/invitacion-isabela.jpg" alt="Invitación Oficial Baby Shower Isabela" class="w-full h-auto object-cover" />
+        </div>
+        <div class="text-center mt-3">
+          <span class="text-[11px] font-sans font-medium uppercase tracking-widest text-sea-dark">
+            Invitación Oficial • Nuestra pequeña sirenita
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA DE DEDICATORIA CENTRAL -->
+    <section class="max-w-3xl mx-auto px-4 mb-20">
+      <div class="relative bg-white/95 rounded-2xl p-8 sm:p-14 shadow-2xl border border-sea-light backdrop-blur-md">
+        <!-- Decoración en esquinas doradas y conchitas -->
+        <div class="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-gold/60 rounded-tl-lg"></div>
+        <div class="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-gold/60 rounded-tr-lg"></div>
+        <div class="absolute bottom-3 left-3 w-8 h-8 border-b-2 border-l-2 border-gold/60 rounded-bl-lg"></div>
+        <div class="absolute bottom-3 right-3 w-8 h-8 border-b-2 border-r-2 border-gold/60 rounded-br-lg"></div>
+
+        <div class="text-center">
+          <span class="font-serif italic text-sea-dark text-lg sm:text-xl block mb-4">
+            «Tan infinito y profundo como el mar es nuestro amor por ti»
+          </span>
+
+          <blockquote class="font-serif text-2xl sm:text-3xl sm:leading-relaxed text-ocean-navy leading-relaxed font-normal my-6">
+            “Para ti, nuestra amada <span class="font-semibold text-sea-dark">princesa Isabela</span>: Antes de que nacieras, ya te soñábamos; antes de conocer tus ojitos, ya te amábamos con todo el corazón. Eres el milagro más hermoso que Dios y la vida nos han regalado, la luz que ilumina cada uno de nuestros días y la promesa de un amor infinito. Papá y mamá te esperamos con los brazos abiertos y un mundo entero de amor listo para ti.”
+          </blockquote>
+
+          <div class="mt-8 pt-6 border-t border-sea-light flex flex-col items-center">
+            <span class="text-xs uppercase tracking-widest font-sans text-ocean-muted mb-1">
+              Con todo el amor de tu familia y papás,
+            </span>
+            <span class="font-serif text-2xl sm:text-3xl font-bold text-ocean-navy tracking-wide">
+              Esperándote, Isabela
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN MELÓDICA: FRASE DE LA CANCIÓN "AZUL" -->
+    <section class="py-12 bg-gradient-to-r from-sea-light/40 via-white to-sea-light/40 border-y border-sea-light text-center px-4 mb-20">
+      <div class="max-w-2xl mx-auto">
+        <svg class="w-8 h-8 text-sea-mint/60 mx-auto mb-3" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <p class="font-serif text-2xl sm:text-3xl text-ocean-navy italic">
+          “Azul, es que este amor es azul como el mar azul... Como el azul del cielo nació entre los dos, y como el sol brillante que alumbra tu amor...”
+        </p>
+        <span class="text-xs uppercase tracking-widest text-sea-dark font-sans font-medium mt-3 block">
+          — Azul • Dedicada con amor a Isabela
+        </span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: 10 MOMENTOS INOLVIDABLES (POLAROIDS DESTACADAS) -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+      <div class="text-center mb-12">
+        <span class="text-xs font-sans tracking-[0.25em] uppercase text-sea-dark font-semibold">
+          Nuestra Dulce Espera
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-ocean-navy font-bold mt-2">
+          Momentos Inolvidables
+        </h2>
+        <p class="font-sans text-xs sm:text-sm text-ocean-muted mt-2 max-w-md mx-auto">
+          Cada fotografía atesora la emoción, las caricias en el vientre y los latidos que anunciaron tu llegada.
+        </p>
+      </div>
+
+      <!-- Cuadrícula Polaroid de las 10 fotos principales -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+        <!-- Foto 1 -->
+        <article class="polaroid-card group" onclick="openLightbox(0)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-01.jpg" alt="Recuerdo de Isabela 1" loading="eager" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            El milagro de la vida floreciendo
+          </p>
+        </article>
+
+        <!-- Foto 2 -->
+        <article class="polaroid-card group" onclick="openLightbox(1)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-02.jpg" alt="Recuerdo de Isabela 2" loading="eager" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Tu llegada esperada con todo el amor
+          </p>
+        </article>
+
+        <!-- Foto 3 -->
+        <article class="polaroid-card group" onclick="openLightbox(2)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-03.jpg" alt="Recuerdo de Isabela 3" loading="eager" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            La melodía más dulce en tu corazón
+          </p>
+        </article>
+
+        <!-- Foto 4 -->
+        <article class="polaroid-card group" onclick="openLightbox(3)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-04.jpg" alt="Recuerdo de Isabela 4" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Soñando con tenerte en brazos
+          </p>
+        </article>
+
+        <!-- Foto 5 -->
+        <article class="polaroid-card group" onclick="openLightbox(4)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-05.jpg" alt="Recuerdo de Isabela 5" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Rodeada de ternura y bendiciones
+          </p>
+        </article>
+
+        <!-- Foto 6 -->
+        <article class="polaroid-card group" onclick="openLightbox(5)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-06.jpg" alt="Recuerdo de Isabela 6" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            La dulce espera de nuestra princesa
+          </p>
+        </article>
+
+        <!-- Foto 7 -->
+        <article class="polaroid-card group" onclick="openLightbox(6)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-07.jpg" alt="Recuerdo de Isabela 7" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Un amor que crece cada día
+          </p>
+        </article>
+
+        <!-- Foto 8 -->
+        <article class="polaroid-card group" onclick="openLightbox(7)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-08.jpg" alt="Recuerdo de Isabela 8" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Tus primeros pasitos en el corazón
+          </p>
+        </article>
+
+        <!-- Foto 9 -->
+        <article class="polaroid-card group" onclick="openLightbox(8)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-09.jpg" alt="Recuerdo de Isabela 9" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Una ilusión infinita como el mar
+          </p>
+        </article>
+
+        <!-- Foto 10 (Centrada) -->
+        <article class="polaroid-card group sm:col-span-2 lg:col-span-1 lg:col-start-2" onclick="openLightbox(9)">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo-10.jpg" alt="Recuerdo de Isabela 10" loading="lazy" />
+          </div>
+          <p class="font-serif italic text-center text-ocean-navy text-lg mt-3 group-hover:text-sea-dark transition-colors">
+            Bienvenida, princesa Isabela
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN: COLECCIÓN COMPLETA DE RECUERDOS (FOTOS 11 A 21) -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+      <div class="text-center mb-10">
+        <span class="text-xs font-sans tracking-[0.25em] uppercase text-sea-dark font-semibold">
+          Galería de Amor
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-ocean-navy font-bold mt-2">
+          Cada Instante de Nuestra Ilusión
+        </h2>
+        <p class="font-sans text-xs sm:text-sm text-ocean-muted mt-2">
+          Toca cualquier fotografía para verla en pantalla completa.
+        </p>
+      </div>
+
+      <!-- Cuadrícula compacta de las 11 fotos complementarias -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4" id="photo-grid">
+        <!-- Foto 11 -->
+        <div class="grid-photo-card" onclick="openLightbox(10)">
+          <img src="assets/images/photo-11.jpg" alt="Recuerdo 11" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 12 -->
+        <div class="grid-photo-card" onclick="openLightbox(11)">
+          <img src="assets/images/photo-12.jpg" alt="Recuerdo 12" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 13 -->
+        <div class="grid-photo-card" onclick="openLightbox(12)">
+          <img src="assets/images/photo-13.jpg" alt="Recuerdo 13" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 14 -->
+        <div class="grid-photo-card" onclick="openLightbox(13)">
+          <img src="assets/images/photo-14.jpg" alt="Recuerdo 14" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 15 -->
+        <div class="grid-photo-card" onclick="openLightbox(14)">
+          <img src="assets/images/photo-15.jpg" alt="Recuerdo 15" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 16 -->
+        <div class="grid-photo-card" onclick="openLightbox(15)">
+          <img src="assets/images/photo-16.jpg" alt="Recuerdo 16" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 17 -->
+        <div class="grid-photo-card" onclick="openLightbox(16)">
+          <img src="assets/images/photo-17.jpg" alt="Recuerdo 17" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 18 -->
+        <div class="grid-photo-card" onclick="openLightbox(17)">
+          <img src="assets/images/photo-18.jpg" alt="Recuerdo 18" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 19 -->
+        <div class="grid-photo-card" onclick="openLightbox(18)">
+          <img src="assets/images/photo-19.jpg" alt="Recuerdo 19" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 20 -->
+        <div class="grid-photo-card" onclick="openLightbox(19)">
+          <img src="assets/images/photo-20.jpg" alt="Recuerdo 20" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+        <!-- Foto 21 -->
+        <div class="grid-photo-card col-span-2 sm:col-span-1" onclick="openLightbox(20)">
+          <img src="assets/images/photo-21.jpg" alt="Recuerdo 21" loading="lazy" />
+          <div class="grid-photo-overlay"><span class="text-[11px] font-serif text-white italic">Ver detalle</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETALLE INTERACTIVO: ENVIAR BENDICIONES A ISABELA -->
+    <section class="max-w-xl mx-auto px-4 text-center mb-20">
+      <div class="bg-white/95 p-8 rounded-2xl shadow-xl border border-sea-light backdrop-blur">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-sea-light/50 flex items-center justify-center text-sea-dark">
+          <!-- Concha / Perla marina -->
+          <svg class="w-6 h-6 text-sea-dark" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 3.2 1.5 6.05 3.84 7.89.47.37 1.15.22 1.45-.31L9 16.5c.34-.6 1.05-.9 1.71-.72L12 16.14l1.29-.36c.66-.18 1.37.12 1.71.72l1.71 3.08c.3.53.98.68 1.45.31C20.5 18.05 22 15.2 22 12c0-5.52-4.48-10-10-10z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-2xl text-ocean-navy font-bold mb-2">
+          ¿Deseas bendecir la vida de Isabela?
+        </h3>
+        <p class="font-sans text-xs sm:text-sm text-ocean-muted mb-6">
+          Toca el botón para enviar una ola de bendiciones, amor y buenos deseos a nuestra pequeña princesa.
+        </p>
+
+        <button id="send-blessing-btn" class="love-btn px-8 py-3.5 rounded-full text-white font-sans text-sm font-semibold inline-flex items-center gap-2">
+          <svg class="w-5 h-5 heart-beat text-gold-light" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+          </svg>
+          <span>Enviar una bendición de amor</span>
+        </button>
+
+        <div id="blessings-counter" class="text-xs font-sans text-ocean-muted mt-4">
+          Bendiciones enviadas con amor: <span id="blessings-count" class="font-semibold text-sea-dark">0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIE DE PÁGINA CON IDENTIDAD RYM JOYERÍA -->
+    <footer class="pt-12 pb-16 border-t border-sea-light bg-white/70 text-center px-4">
+      <div class="max-w-md mx-auto">
+        <div class="flex items-center justify-center gap-2 mb-3">
+          <span class="font-serif text-2xl font-bold text-ocean-navy tracking-wider">RyM</span>
+          <span class="text-gold text-lg">•</span>
+          <span class="font-sans text-xs tracking-widest text-ocean-muted uppercase">Joyería</span>
+        </div>
+        <p class="font-sans text-xs text-ocean-muted leading-relaxed">
+          Calidad en cada detalle. Una dedicatoria y recuerdo eterno creado para acompañar la bienvenida más dulce.
+        </p>
+        <div class="mt-4 flex items-center justify-center gap-4 text-xs font-sans">
+          <a href="https://joyeria.rymgroup.org/" target="_blank" rel="noopener noreferrer" class="text-sea-dark hover:text-ocean-navy underline transition-colors">
+            Visitar Tienda Oficial RyM
+          </a>
+          <span class="text-sand-warm">|</span>
+          <span class="text-ocean-muted font-mono">SKU: D-003</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL PARA TODAS LAS FOTOS -->
+  <div id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Visualizador de fotos">
+    <!-- Botón Cerrar -->
+    <button class="absolute top-5 right-5 text-white/80 hover:text-white p-2 text-3xl focus:outline-none z-50" onclick="closeLightbox()" aria-label="Cerrar vista completa">
+      &times;
+    </button>
+
+    <!-- Botón Anterior -->
+    <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-black/40 hover:bg-black/70 p-3 rounded-full transition-all focus:outline-none z-50" onclick="prevPhoto()" aria-label="Foto anterior">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <!-- Botón Siguiente -->
+    <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-black/40 hover:bg-black/70 p-3 rounded-full transition-all focus:outline-none z-50" onclick="nextPhoto()" aria-label="Siguiente foto">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+
+    <!-- Imagen y pie de foto -->
+    <div class="lightbox-content">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Recuerdo en detalle" />
+      <div class="mt-4 text-center">
+        <p id="lightbox-caption" class="font-serif italic text-sea-light text-lg"></p>
+        <span id="lightbox-index" class="text-xs font-sans text-stone-300 mt-1 block"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
